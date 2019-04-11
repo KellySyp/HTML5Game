@@ -17,6 +17,7 @@ WIP Action/Adventure game in HTML5
 * Inventory
 * Shops
 * Menu
+* Auto filling tileset. (Corners and edges are programmatically filled in based on neighboring tiles.) 
 
 ## Tasks in Progress
 * Music/SFX
