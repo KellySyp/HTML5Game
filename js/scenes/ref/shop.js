@@ -64,8 +64,8 @@ function updateScene_shop(){
 	ctx.fillText(discripOut, 10, 380);
 }
 
-function openShop(){
-		currShop = shopRef[currShopIndex];
+function openShop(index){
+		currShop = shopRef[index];
 		shopIndex = 0;
 		buyMode = true;
 		prevState = state;

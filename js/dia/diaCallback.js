@@ -14,9 +14,7 @@ function changeMove(mode){
 }
 
 function openShop(index){
-	console.log(index);
-	currShopIndex = index;
-	openShop();
+	openShop(index);
 }
 
 function testVar(output){

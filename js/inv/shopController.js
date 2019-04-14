@@ -12,7 +12,8 @@ var shopRef = [
 		assignItem(invMaster["HiPotion"]),
 		assignItem(invMaster["MaxPotion"]),
 	    assignItem(invMaster["Diamond Sword"]),
-	    assignItem(invMaster["Chain Mail"])
+	    assignItem(invMaster["Chain Mail"]),
+		assignItem(invMaster["Potion"])
 	]
 ];
 

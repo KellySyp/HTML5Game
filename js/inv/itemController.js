@@ -40,13 +40,14 @@ function addItem(item){
 	var found = false;
 	for(var i =0; i < inventory.length; i++){
 		if(inventory[i].name == item.name){
+			console.log(item.qty);
 			inventory[i].qty += item.qty;
 			found = true;
 			break;
 		}
 	}
 	if(!found){
-		inventory.push(item);
+		inventory.push(assignItem(invMaster[item.name]));
 	}
 }
 function addGold(value){
