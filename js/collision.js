@@ -34,8 +34,8 @@ function collision(r1, r2){
 				}else{
 					hitValue = r2.value;
 				}
-//				sfx.src = "music/hit.wav";
-//				sfx.play();
+				sfx.src = "music/hit.wav";
+				sfx.play();
 				if(player.equippedArmor.value >= hitValue){
 					hitValue = 0;
 				}else{
@@ -52,8 +52,9 @@ function collision(r1, r2){
 				}, 3000);
 				//Check if player hp is 0 game over
 				if(player.currHP <= 0){
-//					sfx.src = "music/Die.wav";
-//					sfx.play();
+					player.canMove = false;
+					sfx.src = "music/Die.wav";
+					sfx.play();
 					//GO Sequence
 					gameOver();
 				}

@@ -35,7 +35,7 @@ function character(name, width, height, x, y, image){
 	this.maxHP = 10000;
 	this.currHP = 30;
 	this.equippedWeapon = assignItem(invMaster["Wooden Sword"]);
-	this.equippedArmor = assignItem(invMaster["Chain Mail"]);
+	this.equippedArmor = assignItem(invMaster["Leather Vest"]);
 	this.update = function() {
 		//if dirX is 1, char is moving left
 		if(!this.inDialogue){
@@ -77,9 +77,17 @@ function character(name, width, height, x, y, image){
 				this.frameX = this.w;
 			}
 		}
+		
+		ctx.save();
+		if(this.hit){
+			ctx.globalAlpha = 0.5;
+		}else{
+			ctx.globalAlpha = 1;
+		}
 	
 		ctx.drawImage(this.newImg, this.frameX, this.frameY, this.w, this.h, this.x, this.y, this.w, this.h);
-		$("#output").html(this.x+" | "+this.y);
+		//$("#output").html(this.x+" | "+this.y);
+		ctx.restore();
     }
     this.newPos = function() {
 		if(this.canMove && !this.inDialogue){

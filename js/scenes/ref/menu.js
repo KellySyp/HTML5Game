@@ -1,16 +1,3 @@
-/*
-
-Every scene has the same format.
-
-Variables (If applicable)
-Build Settings
-Update Settings
-and any other functions needed for that scene.
-
-The build and update functions are then used on main.js if the current
-game state is in that state.
-
-*/
 var menuIndex = 0;
 var menuLevel = 0;
 var backIndex = 0;
@@ -34,13 +21,6 @@ var currMenu = [];
 
 var cursorX = 0;
 var cursorY = (menuIndex*40 + 100)-17;
-
-$(document).ready(function(){
-});
-
-function buildScene_menu() {
-
-}
 
 function updateScene_menu(){
 	ctx.font = "28px Lucida Console";

@@ -1,19 +1,18 @@
 var shopRef = [
 	[
 		assignItem(invMaster["Potion"]),
+		assignItem(invMaster["HiPotion"])
+	],
+	[
+		assignItem(invMaster["Potion"]),
 		assignItem(invMaster["HiPotion"]),
-		assignItem(invMaster["Metal Sword"]),
-		assignItem(invMaster["Golden Egg"])
+	    assignItem(invMaster["Metal Sword"])
 	],
 	[
-		assignItem(invMaster["Wooden Sword"]),
-	    assignItem(invMaster["Metal Sword"]),
-	    assignItem(invMaster["Diamond Sword"])
-	],
-	[
-		assignItem(invMaster["Wooden Sword"]),
-	    assignItem(invMaster["Metal Sword"]),
-	    assignItem(invMaster["Diamond Sword"])
+		assignItem(invMaster["HiPotion"]),
+		assignItem(invMaster["MaxPotion"]),
+	    assignItem(invMaster["Diamond Sword"]),
+	    assignItem(invMaster["Chain Mail"])
 	]
 ];
 

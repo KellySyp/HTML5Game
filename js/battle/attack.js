@@ -2,7 +2,6 @@
 function attack(thisChar){
 	
 	var range = 20;
-	//var monDieSFX = new Audio("music/monDie.wav");
 	var playerCX = player.x + (player.w/2);
 	var playerCY = player.y + (player.h/2);
 	
@@ -23,12 +22,13 @@ function attack(thisChar){
 		thisChar.currHP -= player.equippedWeapon.value;
 		textParts.push(new textParticle(thisChar.x,thisChar.y,player.equippedWeapon.value,"green",thisChar.w));
 		//Other stuff goes here. Graphics/ sound effects
-//		sfx.src = "music/attack.wav";
-//		sfx.play();
+		sfx.src = "music/attack.wav";
+		sfx.play();
 		if(thisChar.currHP <= 0){
-//			sfx.src = "music/monDie.wav";
-//			sfx.volume = 1;
-//			sfx.play();
+			sfx.src = "music/monDie.wav";
+			sfx.volume = 1;
+			sfx.play();
+			thisChar.drop();
 			monsters.splice(thisChar.index, 1);
 			for(var i =0; i<monsters.length; i++){
 				monsters[i].index = i;

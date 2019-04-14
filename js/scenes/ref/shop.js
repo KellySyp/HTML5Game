@@ -24,13 +24,6 @@ var currShop = [];
 var cursorX = 0;
 var cursorY = (shopIndex*40 + 100)-17;
 
-$(document).ready(function(){
-});
-
-function buildScene_shop() {
-
-}
-
 function updateScene_shop(){
 	ctx.font = "42px Lucida Console";
 	ctx.fillStyle = "black";

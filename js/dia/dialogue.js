@@ -273,7 +273,7 @@ function createBtn(thisChar, thisLine){
 	//This gets hairy. I reset the currentshop index for EVERY button creation.
 	//If there is a shop, it will change the index. If there isn't, it will reset it to 0
 	isButton = true;
-	currShopIndex = thisChar.shopIndex;
+	//currShopIndex = thisChar.shopIndex;
 	var btnLabel = thisLine.substr(1,thisLine.indexOf("}")-1);
 	var type = 0;
 	var output = "";

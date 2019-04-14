@@ -3,48 +3,51 @@ $(document).ready(function(){
 	
 	//Key input management
 	$(document).keydown(function(e){
-		keys[e.keyCode] = true;
+		if(player.currHP > 0)keys[e.keyCode] = true;
 	});
 	$(document).keyup(function(e){
 		keys[e.keyCode] = false;
 		
-		if(e.which == 32 || e.which == 69){
-			checkAction();
-		}
+		if(player.currHP > 0){
 		
-		if(e.which == 81){
-			//open and close menu on Q
+			if(e.which == 32 || e.which == 69){
+				checkAction();
+			}
+			
+			if(e.which == 81){
+				//open and close menu on Q
+				if(state == stateMenu){
+					closeMenu();
+				}else if(state > 9){
+					openMenu();
+				}
+			}
+			
+			if(e.which == 70){
+				//F Key
+			}
+			
+			if(e.which == 90 || e.which == 77){
+				//Z or M Key
+				player.attackMode = true;
+				for(var i =0; i < monsters.length; i++){
+					attack(monsters[i]);
+				}
+			}
+			
+			//Menu Control
 			if(state == stateMenu){
-				closeMenu();
-			}else if(state > 9){
-				openMenu();
+				menuControl(e.which);
 			}
-		}
-		
-		if(e.which == 70){
-			//F Key
-		}
-		
-		if(e.which == 90 || e.which == 77){
-			//Z or M Key
-			player.attackMode = true;
-			for(var i =0; i < monsters.length; i++){
-				attack(monsters[i]);
+			
+			//Shop Control
+			if(state == stateShop){
+				shopControl(e.which);
 			}
-		}
-		
-		//Menu Control
-		if(state == stateMenu){
-			menuControl(e.which);
-		}
-		
-		//Shop Control
-		if(state == stateShop){
-			shopControl(e.which);
-		}
-		
-		if(waiting){
-			btnControl(e.which);
+			
+			if(waiting){
+				btnControl(e.which);
+			}
 		}
 	});
 	

@@ -5,8 +5,8 @@ function testEndGame(){
 
 function playAudio(name){
 	console.log("SUCCESS!");
-	//sfx.src = "music/"+name;
-	//sfx.play();
+	sfx.src = "music/"+name;
+	sfx.play();
 }
 
 function changeMove(mode){
@@ -14,6 +14,7 @@ function changeMove(mode){
 }
 
 function openShop(index){
+	console.log(index);
 	currShopIndex = index;
 	openShop();
 }

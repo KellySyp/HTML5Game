@@ -1,11 +1,4 @@
 
-$(document).ready(function(){
-});
-
-function buildScene_gameOver(){
-	
-}
-
 function updateScene_gameOver(){
 	ctx.font = "42px Lucida Console";
 	ctx.fillStyle = "black";

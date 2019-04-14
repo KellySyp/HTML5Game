@@ -1,20 +1,18 @@
 var frameCounter = 0;
 
 //This is the monster class.
-function monster(name, index, value, width, height, monType, color, x, y, moveType, maxHp, image){
-	this.name = name;
-	this.index = index;
+function monster(value, width, height, moveType, maxHp, image){
+	this.index = 0;
 	this.value = value;
 	this.w = width;
 	this.h = height;
-	this.monType = monType
 	this.dirX = 0;
 	this.dirY = 0;
 	this.speed = 1;
-	this.x = x;
-	this.y = y;
-	this.nx = x;
-	this.ny = y;
+	this.x = 0;
+	this.y = 0;
+	this.nx = 0;
+	this.ny = 0;
 	this.moveType = moveType;
 	this.type = "monster";
 	this.newImg = document.createElement("IMG");
@@ -77,4 +75,17 @@ function monster(name, index, value, width, height, monType, color, x, y, moveTy
 			this.canMove = !this.canMove;
 		}
     }
+	this.drop = function() {
+		var result = Math.floor(Math.random() * 2);
+		if(result == 1){
+			console.log("You got " + (3 * this.value) + " gold!");
+		}else if(result == 2){
+			if(this.value > 15){
+				console.log("You got a Hi-Potion");
+			}else{
+				console.log("You got a potion");
+			}
+			
+		}
+	}
 }

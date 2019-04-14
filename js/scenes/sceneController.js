@@ -1,7 +1,9 @@
 var testWarp = 17;
 
-	var bgm = document.createElement('audio');
-	bgm.id = "bgm";
+var bgm = document.createElement('audio');
+bgm.id = "bgm";
+bgm.src = "music/field.mp3";
+	
 var npcs = [];
 var chests = [];
 
@@ -49,16 +51,20 @@ function startScenes(){
 	npcs.push(new npc(32, 32, 242, 242, 0, 0, "townb", stateTown, "img/NPC2.png", 2));
 	npcs.push(new npc(32, 32, 324, 242, 0, 0, "townc", stateTown, "img/NPC3.png", 4));
 	
-	//npcs.push(new npc(32, 32, 384, 284, 0, 0, "foresta", stateForestOut, "img/NPC1.png"));
-	//npcs.push(new npc(32, 32, 164, 124, 0, 0, "forestb", stateForestOut, "img/NPC2.png"));
-	//npcs.push(new npc(32, 32, 124, 204, 0, 0, "forestc", stateForestOut, "img/NPC3.png"));
-	//
-	//npcs.push(new npc(32, 32, 200, 150, 0, 0, "wastea", stateWasteOut, "img/NPC1.png"));
-	//npcs.push(new npc(32, 32, 162, 242, 0, 0, "wasteb", stateWasteOut, "img/NPC2.png"));
-	//npcs.push(new npc(32, 32, 324, 242, 0, 0, "wastec", stateWasteOut, "img/NPC3.png"));
-	//
-	//npcs.push(new npc(32, 32, 324, 202, 0, 0, "butcher", stateWaste3, "img/NPC3.png"));
-	//npcs.push(new npc(32, 32, 282, 150, 0, 0, "queen", stateCastle, "img/NPC3.png"));
+	monsters.push(assignMon(bestMaster["Forest"]));
+	monsters[0].x = 250;
+	monsters[0].y = 150;	
+	
+	npcs.push(new npc(32, 32, 384, 284, 0, 0, "foresta", stateForestOut, "img/NPC1.png"));
+	npcs.push(new npc(32, 32, 164, 124, 0, 0, "forestb", stateForestOut, "img/NPC2.png"));
+	npcs.push(new npc(32, 32, 124, 204, 0, 0, "forestc", stateForestOut, "img/NPC3.png"));
+	
+	npcs.push(new npc(32, 32, 200, 150, 0, 0, "wastea", stateWasteOut, "img/NPC1.png"));
+	npcs.push(new npc(32, 32, 162, 242, 0, 0, "wasteb", stateWasteOut, "img/NPC2.png"));
+	npcs.push(new npc(32, 32, 324, 242, 0, 0, "wastec", stateWasteOut, "img/NPC3.png"));
+
+	npcs.push(new npc(32, 32, 324, 202, 0, 0, "butcher", stateWaste3, "img/NPC3.png"));
+	npcs.push(new npc(32, 32, 282, 150, 0, 0, "queen", stateCastle, "img/NPC3.png"));
 	
 	for(var i = 0; i < npcs.length; i++){
 		npcs[i].index = i;
@@ -108,8 +114,9 @@ function buildScenes(change) {
 		this.currentTime = 0;
 		this.play();
 	}, false);
-		bgm.volume = 0.5;
-		bgm.play();
+	
+	bgm.volume = 0.5;
+	bgm.play();
 	
 	//This gives NPCs a value so they can be uniquely indentified later.
 	for(var i =0; i < npcs.length; i++){
@@ -167,7 +174,7 @@ function updateScenes(){
 					}
 				}
 				for(var j = 0; j < monsters.length; j++){
-					collision(monsters[i],npcs[j]);
+					collision(monsters[j],npcs[i]);
 				}
 			}
 		}
