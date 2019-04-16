@@ -24,6 +24,11 @@ function collision(r1, r2){
 		}
 		
 		//If the player 
+		if(r2.type == "drop" && r1.type == "hero"){
+			r2.claimDrop();
+		}
+		
+		//If the player 
 		if((r2.type == "monster" && r1.type == "hero")
 			|| (r2.type == "hero" && r1.type == "monster")){
 			if(!player.hit){
