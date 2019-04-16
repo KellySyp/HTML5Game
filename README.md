@@ -18,10 +18,11 @@ WIP Action/Adventure game in HTML5
 * Shops
 * Menu
 * Auto filling tileset. (Corners and edges are programmatically filled in based on neighboring tiles.) 
+* Combat
+* Doors
 
 ## Tasks in Progress
 * Music/SFX
-* Combat
 * Formatting
 * Clean code and centralize customization
 * User Guide
