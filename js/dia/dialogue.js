@@ -98,6 +98,10 @@ function advanceDia(thisChar){
 			thisChar.opened = true;
 		}
 		
+		if(thisChar.type == "door"){
+			thisChar.checkLock();
+		}
+		
 		//If random, gets a random line in the dialogue.
 		if(thisChar.diaType == 1){
 			var max = getMaxLabels(thisChar, "rdm");
@@ -242,6 +246,9 @@ function endDialogue(thisChar){
 	//Chest dialogue to tell the player it;s now empty.
 	if(thisChar.type == "chest"){
 		thisChar.changeDialogue();
+	}
+	if(thisChar.type == "door" && thisChar.opened){
+		doors.splice(doors.indexOf(thisChar), 1);
 	}
 }
 

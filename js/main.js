@@ -200,6 +200,11 @@ function checkAction(){
 				dialogue(chests[i],0);
 			}
 		}
+		for(var i =0; i < doors.length; i++){
+			if(doors[i].scene == state){
+				dialogue(doors[i]);
+			}
+		}
 	}
 	//Check Player in dialogue
 }

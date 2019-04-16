@@ -76,14 +76,15 @@ function monster(value, width, height, moveType, maxHp, image){
 		}
     }
 	this.drop = function() {
-		var result = Math.floor(Math.random() * 2);
+		var result = Math.floor(Math.random() * 3);
+		console.log(result);
 		if(result == 1){
-			console.log("You got " + (3 * this.value) + " gold!");
+			drops.push(new drop(this.x, this.y, 0, (3 * this.value)));
 		}else if(result == 2){
 			if(this.value > 15){
-				console.log("You got a Hi-Potion");
+				drops.push(new drop(this.x, this.y, 1, 100));
 			}else{
-				console.log("You got a potion");
+				drops.push(new drop(this.x, this.y, 1, 200));
 			}
 			
 		}

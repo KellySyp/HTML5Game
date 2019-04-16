@@ -39,10 +39,8 @@ function checkKey(item){
 		}
 	}
 	if(counter > 0){
-		npcs[tempChar].label = "doesHave";
+		console.log("Open Sesame");
 		var index = inventory.indexOf(item);
 		inventory.splice(index,1);
-	}else{
-		npcs[tempChar].label = "notHave";
 	}
 }

@@ -27,8 +27,8 @@ var diaNPC = {
 	
 };
  var diaObjects = {
-	"door": "It's locked\nCALS-checkKey('Key')\n-notHave\nIt's still locked\n-doesHave\nYou unlocked the door\nCALL-addGold(10)",
-	/*"chest": "\nThis is multiple lines\n#I hope everyone is Well!\nYAY!\n-next",
+	/*"door": "It's locked\nCALS-checkKey('Key')\n-notHave\nIt's still locked\n-doesHave\nYou unlocked the door\nCALL-addGold(10)",
+	"chest": "\nThis is multiple lines\n#I hope everyone is Well!\nYAY!\n-next",
 	"testGoto": "\nHi. Let's skip the small talk.\nGOTO-end\nI hope everyone is Well!\nYAY!\n-end\nSee isn't that easy?\n-more",
 	"random": "-rdm0\nHi How are you?\n-rdm1\nToday is a beautiful day!\nIsn't it?\n-rdm2\nThe birds are singing and the sun is shining.\n-rdm3\nREDRUMREDRUMREDRUM!!!!",
 	"repeat": "Let me tell you a story!\nIt's a really good one!!\neh... I forgot.",

@@ -1,5 +1,5 @@
 //Walls and static barriers.
-function warp(isTall, isLow, val, scScene, tarScene, changeMusic){
+function warp(isTall, isLow, val, scScene, tarScene, changeMusic= false, hasDoor = false){
 	this.x = 1;
 	this.y = 1;
 	this.w = 1;
@@ -10,13 +10,14 @@ function warp(isTall, isLow, val, scScene, tarScene, changeMusic){
 	this.targetX = 1;
 	this.targetY = 1;
 	this.changeMusic = changeMusic;
+	this.hasDoor = hasDoor;
 	//TEST
 	this.warpActivate = function() {
 		fadeOut(this.targetScene, this.targetX, this.targetY);
     }
 	this.update = function() {
-		ctx.fillStyle = "rgba(66, 244, 235, 0.3)";
-		ctx.fillRect(this.x, this.y, this.w, this.h);
+		//ctx.fillStyle = "rgba(66, 244, 235, 0.3)";
+		//ctx.fillRect(this.x, this.y, this.w, this.h);
     }
 	if(isTall){
 		this.w = 10;
@@ -42,6 +43,10 @@ function warp(isTall, isLow, val, scScene, tarScene, changeMusic){
 		}
 		this.x = val*40;
 		this.targetX = (val*40)+44;
+	}
+	if(this.hasDoor){
+		//door(x, y, w, h, scene){
+		doors.push(new door(this.x-10, this.y-10, this.w+20, this.h+20, this.sourceScene));
 	}
 }
 

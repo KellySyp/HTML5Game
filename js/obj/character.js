@@ -14,7 +14,7 @@ function character(name, width, height, x, y, image){
 	this.nx = x;
 	this.ny = y;
 	this.type = "hero";
-	this.EXP = 9000;
+	//this.EXP = 9000;
 	
 	this.newImg = document.createElement("IMG");
 	this.newImg.setAttribute("src", image);
@@ -32,8 +32,8 @@ function character(name, width, height, x, y, image){
 	//Battle Stats
 	this.hit = false;
 	this.hitCounter = 50;
-	this.maxHP = 10000;
-	this.currHP = 30;
+	this.maxHP = 500;
+	this.currHP = 500;
 	this.equippedWeapon = assignItem(invMaster["Wooden Sword"]);
 	this.equippedArmor = assignItem(invMaster["Leather Vest"]);
 	this.update = function() {
@@ -86,7 +86,7 @@ function character(name, width, height, x, y, image){
 		}
 	
 		ctx.drawImage(this.newImg, this.frameX, this.frameY, this.w, this.h, this.x, this.y, this.w, this.h);
-		//$("#output").html(this.x+" | "+this.y);
+		$("#output").html(this.x+" | "+this.y);
 		ctx.restore();
     }
     this.newPos = function() {

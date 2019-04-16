@@ -1,5 +1,5 @@
 var inventory = [];
-var gold = 99999999;
+var gold = 100;
 
 //Master inventory list. 
 //item(name, value, buy, sell, type, qty, description){
@@ -40,7 +40,6 @@ function addItem(item){
 	var found = false;
 	for(var i =0; i < inventory.length; i++){
 		if(inventory[i].name == item.name){
-			console.log(item.qty);
 			inventory[i].qty += item.qty;
 			found = true;
 			break;

@@ -31,7 +31,7 @@ function updateScene_menu(){
 	ctx.fillText(player.name,50,100);
 	ctx.fillText("HP: "+player.currHP+"/"+player.maxHP,50,140);
 	ctx.fillText("Gold: "+gold,50,180);
-	ctx.fillText(player.EXP,50,220);
+	//ctx.fillText(player.EXP,50,220);
 	
 	if(menuLevel == 0){
 		currMenu = menu0;
@@ -150,6 +150,8 @@ function checkMenu(){
 		}else if (menuIndex == 5){
 			//Exit Game
 			state = stateStart;
+			scrollOffset = 0;
+			cursor.visible = false;
 		}
 	}else if(menuIndex == currMenu.length){
 		//Back button is clicked inside a sub menu
