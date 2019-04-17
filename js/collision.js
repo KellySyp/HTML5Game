@@ -1,11 +1,11 @@
 //Check if two objects are touching. Pretty straight forward.
-
+var offset = 3;
 function collision(r1, r2){
 	//Me
-	var myleft = r1.x + r1.dirX*r1.speed;
-	var myright = r1.x + r1.dirX*r1.speed + (r1.w);
-	var mytop = r1.y + r1.dirY*r1.speed;
-	var mybottom = r1.y + r1.dirY*r1.speed + (r1.h);
+	var myleft = r1.x + r1.dirX*r1.speed + offset;
+	var myright = r1.x + r1.dirX*r1.speed + (r1.w) - offset;
+	var mytop = r1.y + r1.dirY*r1.speed + offset;
+	var mybottom = r1.y + r1.dirY*r1.speed + (r1.h) - offset;
 	//Other Guy
 	var otherleft = r2.x;
 	var otherright = r2.x + (r2.w);

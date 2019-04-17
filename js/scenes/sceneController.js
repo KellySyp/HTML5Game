@@ -40,19 +40,17 @@ function clearArrays(){
 function startScenes(){
 	
 	//TEST Scene items that are declared once and never deleted
-	chests.push(new chest(362,42, 1, assignItem(invMaster["Key"]), stateTown));
-	chests.push(new chest(462,42, 1, assignItem(invMaster["Key"]), stateTown));
-	chests.push(new chest(462,142, 1, assignItem(invMaster["Key"]), stateTown));
-	chests.push(new chest(446,126, 0, 500, stateForest2));
-	chests.push(new chest(42,82, 0, 500, stateForest2));
-	chests.push(new chest(272,247, 0, 500, stateForestOut));
-	chests.push(new chest(162,286, 0, 500, stateForest3));
-	chests.push(new chest(122,282, 0, 500, stateWaste1));
-	chests.push(new chest(42,122, 0, 500, stateWaste2));
-	chests.push(new chest(162,242, 0, 500, stateNecro1));
-	chests.push(new chest(442,42, 0, 500, stateNecro2));
-	chests.push(new chest(526,326, 0, 500, stateNecro2));
-	chests.push(new chest(526,42, 0, 500, stateNecro3));
+	chests.push(new chest(362,42, 0, 300, stateTown));
+	chests.push(new chest(446,126, 0, 100, stateForest2));
+	chests.push(new chest(42,82, 1, assignItem(invMaster["Potion"]), stateForest2));
+	chests.push(new chest(272,247, 0, 100, stateForestOut));
+	chests.push(new chest(530,38, 1, assignItem(invMaster["Key"]), stateForest3));
+	chests.push(new chest(122,282, 1, assignItem(invMaster["HiPotion"]), stateWaste1));
+	chests.push(new chest(42,122, 1, assignItem(invMaster["Key"]), stateWaste2));
+	chests.push(new chest(162,242, 1, assignItem(invMaster["Golden Egg"]), stateNecro1));
+	chests.push(new chest(442,42, 1, assignItem(invMaster["Key"]), stateNecro2));
+	chests.push(new chest(526,326, 1, assignItem(invMaster["HiPotion"]), stateNecro2));
+	chests.push(new chest(526,42, 1, assignItem(invMaster["MaxPotion"]), stateNecro3));
 	
 	
 	//door(x, y, w, h, scene){
@@ -69,23 +67,23 @@ function startScenes(){
 	*/
 	//npc(width, height, x, y, moveType, diaType, script, state, image)
 	npcs.push(new npc(32, 32, 200, 150, 0, 2, "towna", stateTown, "img/NPC1.png"));
-	npcs.push(new npc(32, 32, 242, 242, 0, 0, "townb", stateTown, "img/NPC2.png", 2));
+	npcs.push(new npc(32, 32, 242, 242, 0, 2, "townb", stateTown, "img/NPC2.png", 2));
 	npcs.push(new npc(32, 32, 324, 242, 0, 0, "townc", stateTown, "img/NPC3.png", 4));
 	
 	/*monsters.push(assignMon(bestMaster["Forest"]));
 	monsters[0].x = 250;
 	monsters[0].y = 150;	*/
 	
-	npcs.push(new npc(32, 32, 384, 284, 0, 0, "foresta", stateForestOut, "img/NPC1.png"));
-	npcs.push(new npc(32, 32, 164, 124, 0, 0, "forestb", stateForestOut, "img/NPC2.png"));
-	npcs.push(new npc(32, 32, 124, 204, 0, 0, "forestc", stateForestOut, "img/NPC3.png"));
-	
-	npcs.push(new npc(32, 32, 200, 150, 0, 0, "wastea", stateWasteOut, "img/NPC1.png"));
-	npcs.push(new npc(32, 32, 162, 242, 0, 0, "wasteb", stateWasteOut, "img/NPC2.png"));
-	npcs.push(new npc(32, 32, 324, 242, 0, 0, "wastec", stateWasteOut, "img/NPC3.png"));
+	npcs.push(new npc(32, 32, 84, 204, 0, 2, "foresta", stateForestOut, "img/NPC3.png",1));
+	npcs.push(new npc(32, 32, 164, 124, 0, 2, "forestb", stateForestOut, "img/NPC2.png"));
+	npcs.push(new npc(32, 32, 384, 284, 0, 0, "forestc", stateForestOut, "img/NPC1.png",1));
 
-	npcs.push(new npc(32, 32, 324, 202, 0, 0, "butcher", stateWaste3, "img/butcher.png"));
-	npcs.push(new npc(32, 32, 282, 150, 0, 0, "queen", stateCastle, "img/Queen.png"));
+	npcs.push(new npc(32, 32, 324, 202, 0, 2, "wastea", stateWasteOut, "img/NPC3.png"));
+	npcs.push(new npc(32, 32, 162, 202, 0, 2, "wasteb", stateWasteOut, "img/NPC2.png"));
+	npcs.push(new npc(32, 32, 200, 60, 0, 0, "wastec", stateWasteOut, "img/NPC1.png"));
+
+	//npcs.push(new npc(32, 32, 324, 202, 0, 0, "butcher", stateWaste3, "img/butcher.png"));
+	//npcs.push(new npc(32, 32, 282, 150, 0, 0, "queen", stateCastle, "img/Queen.png"));
 	
 	for(var i = 0; i < npcs.length; i++){
 		npcs[i].index = i;
@@ -364,30 +362,37 @@ function updateScenes(){
 }
 
 function spawnMonsters(){
-	var type = "Forest";
-	if(state > 30){
-		type = "Ruins";
-	}else if (state > 20){
-		type = "Mountain";
-	}
-	var rdm = Math.floor(Math.random() * 4) + 1;
-	
-	//Create Monsters
-	for(var i = 0; i < rdm; i++){
-		monsters.push(assignMon(bestMaster[type]));
-	}
-	//Place Monsters
-	for(var m = 0; m < monsters.length; m++){
-		var monPlaced = false;
-		while(!monPlaced){
-			//adjusted with -2 and +1 to prevent monsters from spawning on perimeter, preventing player from getting hit when entering a new screen.
-			var newx = Math.floor(Math.random() * (mapSelect[0].length-2))+1;
-			var newy = Math.floor(Math.random() * (mapSelect.length-2))+1;
-			if(mapSelect[newy][newx] == 0){
-				monPlaced = true;
-				monsters[m].x = (newx*40)+1;
-				monsters[m].y = (newy*40)+1;
+	if(state < 38){
+		var type = "Forest";
+		if(state > 30){
+			type = "Ruins";
+		}else if (state > 20){
+			type = "Mountain";
+		}
+		var rdm = Math.floor(Math.random() * 4) + 1;
+		
+		//Create Monsters
+		for(var i = 0; i < rdm; i++){
+			monsters.push(assignMon(bestMaster[type]));
+		}
+		//Place Monsters
+		for(var m = 0; m < monsters.length; m++){
+			var monPlaced = false;
+			while(!monPlaced){
+				//adjusted with -2 and +1 to prevent monsters from spawning on perimeter, preventing player from getting hit when entering a new screen.
+				var newx = Math.floor(Math.random() * (mapSelect[0].length-2))+1;
+				var newy = Math.floor(Math.random() * (mapSelect.length-2))+1;
+				if(mapSelect[newy][newx] == 0){
+					monPlaced = true;
+					monsters[m].x = (newx*40)+1;
+					monsters[m].y = (newy*40)+1;
+				}
 			}
 		}
+	}else{
+		monsters.push(assignMon(bestMaster["Queen"]));
+		monsters[0].x = 282;
+		monsters[0].y = 152;
+		monsters[0].type = "boss";
 	}
 }

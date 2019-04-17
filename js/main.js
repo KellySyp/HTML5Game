@@ -83,9 +83,9 @@ const stateWasteOut = 29;
 const stateNecro1 = 31;
 const stateNecro2 = 32;
 const stateNecro3 = 33;
-const stateCastle = 39;
+const stateCastle = 38;
 
-const testState = 10;
+const testState = 1;
 
 //Change this to test ***************
 var state = testState;
@@ -160,14 +160,13 @@ function updateGameArea(){
 		if (keys[39] || keys[68]) {player.dirX = 1; }
 		if (keys[38] || keys[87]) {player.dirY = -1; }
 		if (keys[40] || keys[83]) {player.dirY = 1; }
-		
-		player.newPos();
-		
-		player.update();
 	}
 	
 	//Updates scenes
 	updateScenes();
+	player.newPos();
+		
+	player.update();
 }
 
 function checkAction(){

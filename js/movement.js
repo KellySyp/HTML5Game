@@ -15,7 +15,7 @@ function moveChar(thisChar, type){
 			thisChar.dirY = thisChar.dirY*-1;
 		}
 		if(timer == 0){
-			timer = Math.floor(Math.random() * (400-200+1) + 200);
+			timer = Math.floor(Math.random() * (300-200+1) + 200);
 			if(isMoving){
 				newDirX = randomDir();
 				newDirY = randomDir();

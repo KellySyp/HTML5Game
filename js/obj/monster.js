@@ -8,7 +8,7 @@ function monster(value, width, height, moveType, maxHp, image){
 	this.h = height;
 	this.dirX = 0;
 	this.dirY = 0;
-	this.speed = 1;
+	this.speed = 2;
 	this.x = 0;
 	this.y = 0;
 	this.nx = 0;
@@ -81,10 +81,10 @@ function monster(value, width, height, moveType, maxHp, image){
 		if(result == 1){
 			drops.push(new drop(this.x, this.y, 0, (3 * this.value)));
 		}else if(result == 2){
-			if(this.value > 15){
-				drops.push(new drop(this.x, this.y, 1, 100));
+			if(this.value > 60){
+				drops.push(new drop(this.x, this.y, 1, 30));
 			}else{
-				drops.push(new drop(this.x, this.y, 1, 200));
+				drops.push(new drop(this.x, this.y, 1, 15));
 			}
 			
 		}

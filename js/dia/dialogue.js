@@ -84,7 +84,7 @@ function dialogue(thisChar){
 }
 
 function advanceDia(thisChar){
-	
+	diaLine2 = "";
 	if(!waiting){
 		thisChar.inDialogue = true;
 		player.inDialogue = true;
@@ -224,7 +224,6 @@ function advanceDia(thisChar){
 }
 
 function endDialogue(thisChar){
-	diaLine2 = "";
 	player.inDialogue = false;
 	thisChar.inDialogue = false;
 	//Unless the dialogue is instructed to repeat the last line (2)

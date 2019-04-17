@@ -5,17 +5,17 @@ var gold = 100;
 //item(name, value, buy, sell, type, qty, description){
 var invMaster = {
 	"Potion": new item("Potion", 20, 15, 10, 0, 1, "Cures a little HP"),
-	"HiPotion": new item("HiPotion", 50, 25, 15, 0, 1, "Cures some HP"),
-	"MaxPotion": new item("MaxPotion", 75, 40, 30, 0, 1, "Cures a lot of HP"),
+	"HiPotion": new item("HiPotion", 40, 25, 15, 0, 1, "Cures some HP"),
+	"MaxPotion": new item("MaxPotion", 60, 40, 30, 0, 1, "Cures a lot of HP"),
 	
-	"Golden Egg": new item("Golden Egg", 0, 999, 999, 0, 1, "It's Really Expensive."),
+	"Golden Egg": new item("Golden Egg", 0, 999, 500, 0, 1, "It's Really Expensive."),
 	
-	"Wooden Sword": new item("Wooden Sword", 5, 5000, 50, 1, 1, "A small sword made of wood"),
-	"Metal Sword": new item("Metal Sword", 10, 100, 70, 1, 1, "A solid sword made of metal"),
-	"Diamond Sword": new item("Diamond Sword", 20, 1500, 1400, 1, 1, "A Sturdy Sword made of Diamond"),
+	"Wooden Sword": new item("Wooden Sword", 11, 100, 70, 1, 1, "A small sword made of wood"),
+	"Metal Sword": new item("Metal Sword", 23, 700, 288, 1, 1, "A solid sword made of metal"),
+	"Diamond Sword": new item("Diamond Sword", 38, 1487, 1400, 1, 1, "A Sturdy Sword made of Diamond"),
 	
-	"Leather Vest": new item("Leather Vest", 3, 70, 50, 2, 1, "A vest made of patchwork leather"),
-	"Chain Mail": new item("Chain Mail", 10, 120, 100, 2, 1, "Armor made of metal"),
+	"Leather Vest": new item("Leather Vest", 25, 320, 278, 2, 1, "A vest made of patchwork leather"),
+	"Chain Mail": new item("Chain Mail", 45, 500, 430, 2, 1, "Armor made of metal"),
 	
 	"Locket": new item("Locket", 0, 0, 0, 3, 1, "A Rusty old Locket."),
 	"Key": new item("Key", 0, 0, 0, 3, 1, "Used to unlock doors.")

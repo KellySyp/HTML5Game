@@ -28,10 +28,14 @@ function attack(thisChar){
 			sfx.src = "music/monDie.wav";
 			sfx.volume = 1;
 			sfx.play();
-			thisChar.drop();
-			monsters.splice(thisChar.index, 1);
-			for(var i =0; i<monsters.length; i++){
-				monsters[i].index = i;
+			if(thisChar.type != "boss"){
+				thisChar.drop();
+				monsters.splice(thisChar.index, 1);
+				for(var i =0; i<monsters.length; i++){
+					monsters[i].index = i;
+				}
+			}else{
+				gameOver();
 			}
 		}
 	} 
